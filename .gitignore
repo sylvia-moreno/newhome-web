@@ -1,0 +1,12 @@
+node_modules
+.env
+.env.local
+.env.*.local
+.next
+dist
+build
+.vercel
+.DS_Store
+public/videos/
+*.mp4
+*.mov
