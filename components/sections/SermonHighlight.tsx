@@ -2,21 +2,27 @@ import Container from "@/components/Container";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 import { getLatestSermon } from "@/lib/strapi";
-
+import type { SermonItem } from "@/lib/types";
 function formatDate(iso: string) {
   try {
     const d = new Date(iso);
-    return d.toLocaleDateString("fr-FR", { day: "2-digit", month: "long", year: "numeric" });
-  } catch {
+    return d.toLocaleDateString("fr-FR", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    });
+  } catch (error) {
+    console.error("Error formatting date:", error);
     return iso;
   }
 }
 
 export default async function SermonHighlight() {
-  let sermon = null;
+  let sermon: SermonItem | null = null;
   try {
     sermon = await getLatestSermon();
-  } catch {
+  } catch (error) {
+    console.error("Error fetching latest sermon:", error);
     sermon = null;
   }
 
@@ -24,12 +30,16 @@ export default async function SermonHighlight() {
     <section className="py-12">
       <Container>
         <div className="rounded-xl border border-black/10 bg-white p-8 md:p-10">
-          <p className="text-xs uppercase tracking-widest text-black/60">Dernier message</p>
+          <p className="text-xs uppercase tracking-widest text-black/60">
+            Dernier message
+          </p>
           <h2 className="mt-2 font-title text-3xl md:text-4xl">
             {sermon?.title ?? "Retrouver les messages"}
           </h2>
           <p className="mt-3 text-sm text-black/70">
-            {sermon?.date ? formatDate(sermon.date) : "Sur YouTube, chaque semaine."}
+            {sermon?.date
+              ? formatDate(sermon.date)
+              : "Sur YouTube, chaque semaine."}
             {sermon?.speaker ? ` · ${sermon.speaker}` : ""}
           </p>
           <p className="mt-4 max-w-3xl text-base text-black/70">

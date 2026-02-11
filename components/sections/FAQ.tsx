@@ -5,7 +5,7 @@ import type { FAQItem } from "@/lib/types";
 export default async function FAQ() {
   let items: FAQItem[] = [];
   try {
-    items = await getFAQ().catch(() => []); 
+    items = await getFAQ().catch(() => []);
   } catch (error) {
     console.error("Error fetching FAQ:", error);
     items = [];

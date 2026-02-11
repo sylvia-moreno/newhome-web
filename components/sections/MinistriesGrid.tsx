@@ -1,13 +1,14 @@
 import Container from "@/components/Container";
 import Link from "next/link";
 import { getMinistries } from "@/lib/strapi";
+import type { Ministry } from "@/lib/types";
 
 export default async function MinistriesGrid() {
-  let ministries = [];
+  let ministries: Ministry[] = [];
   try {
     ministries = await getMinistries();
-  } catch {
-    ministries = [];
+  } catch (error) {
+    console.error("Error fetching ministries:", error);
   }
 
   const fallback = [
