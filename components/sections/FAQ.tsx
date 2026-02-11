@@ -1,11 +1,13 @@
 import Container from "@/components/Container";
 import { getFAQ } from "@/lib/strapi";
+import type { FAQItem } from "@/lib/types";
 
 export default async function FAQ() {
-  let items = [];
+  let items: FAQItem[] = [];
   try {
     items = await getFAQ();
-  } catch {
+  } catch (error) {
+    console.error("Error fetching FAQ:", error);
     items = [];
   }
 
@@ -24,7 +26,7 @@ export default async function FAQ() {
         <h2 className="mt-2 font-title text-3xl md:text-4xl">Questions fréquentes</h2>
 
         <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {list.slice(0, 6).map((f: any) => (
+          {list.slice(0, 6).map((f: FAQItem) => (
             <div key={f.id} className="rounded-xl border border-black/10 bg-white p-6">
               <div className="font-title text-2xl">{f.question}</div>
               <p className="mt-2 text-sm text-black/70">{f.answer}</p>
