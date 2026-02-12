@@ -23,7 +23,11 @@ export default function Footer() {
             <Link className="hover:text-brand" href={SITE.links.instagram}>
               Instagram
             </Link>
-            <Link className="hover:text-brand" href={SITE.links.donate}>
+            <Link
+              className="hover:text-brand"
+              href="https://donorbox.org/deviens-un-partenaire-mensuel-de-l-eglise-new-home-paris"
+              target="_blank"
+            >
               Donner
             </Link>
             <Link className="hover:text-brand" href={SITE.links.maps}>

@@ -55,7 +55,8 @@ export default function Header() {
             </Link>
           ))}
           <Link
-            href="/donner"
+            href="https://donorbox.org/deviens-un-partenaire-mensuel-de-l-eglise-new-home-paris"
+            target="_blank"
             className="ml-2 inline-flex items-center rounded-xl bg-brand px-4 py-2 text-white hover:opacity-90 transition-opacity"
           >
             Donner
@@ -111,7 +112,8 @@ export default function Header() {
             </Link>
           ))}
           <Link
-            href="/donner"
+            href="https://donorbox.org/deviens-un-partenaire-mensuel-de-l-eglise-new-home-paris"
+            target="_blank"
             onClick={() => setOpen(false)}
             className="mt-2 inline-flex items-center justify-center rounded-xl bg-brand px-4 py-3 text-white hover:opacity-90 transition-opacity"
           >
