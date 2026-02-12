@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import Vision from "@/components/sections/Vision";
 import Decouvrir from "@/components/sections/Decouvrir";
+import Contact from "@/components/sections/Contact";
 
 export default function HomePage() {
   return (
@@ -46,6 +47,7 @@ export default function HomePage() {
         ]}
         autoPlayMs={4500}
       />
+      <Contact/>
     </>
   );
 }

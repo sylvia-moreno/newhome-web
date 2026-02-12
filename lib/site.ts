@@ -10,4 +10,5 @@ export const SITE = {
     donate: "https://donorbox.org/deviens-un-partenaire-mensuel-de-l-eglise-new-home-paris",
     maps: "https://www.google.com/maps/search/?api=1&query=45bis%20Av.%20%C3%89douard%20Vaillant%2C%2092100%20Boulogne-Billancourt",
   },
+  email: "newhome.church.paris@gmail.com",
 } as const;

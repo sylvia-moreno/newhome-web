@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { SITE } from "@/lib/site";
-
 export default function Footer() {
   return (
     <footer className="border-t border-black/10 mt-16">
@@ -34,22 +33,6 @@ export default function Footer() {
               Itinéraire
             </Link>
           </div>
-        </div>
-
-        <div className="text-sm">
-          <div className="uppercase tracking-widest text-xs text-black/60">
-            Contact
-          </div>
-          <p className="mt-3 text-black/70">
-            Une question, une visite, une demande de prière, écris-nous à{" "}
-            <a
-              href="mailto:	newhome.church.paris@gmail.com"
-              className="hover:text-brand"
-            >
-              newhome.church.paris@gmail.com
-            </a>
-            .
-          </p>
         </div>
       </div>
     </footer>
