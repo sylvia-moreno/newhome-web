@@ -2,6 +2,7 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./MediaTextRow.module.css";
+import Image from "next/image";
 
 type ImageItem = { src: string; alt?: string };
 
@@ -60,7 +61,7 @@ function MediaRenderer({ media }: { media: Media }) {
 
   if (media.type === "image") {
     return (
-      <img
+      <Image
         className={styles.media}
         src={media.src}
         alt={media.alt ?? ""}
@@ -128,7 +129,7 @@ function ImageSlider({
           style={{ transform: `translateX(-${index * 100}%)` }}
         >
           {safeImages.map((img, i) => (
-            <img
+            <Image
               key={`${img.src}-${i}`}
               className={styles.sliderImage}
               src={img.src}

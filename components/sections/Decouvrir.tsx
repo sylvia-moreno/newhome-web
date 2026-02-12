@@ -3,6 +3,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import "./Decouvrir.css";
+import Image from "next/image";
 
 type SiteItem = {
   title: string;
@@ -116,11 +117,12 @@ export default function Decouvrir({
                 }}
               >
                 <Link className="cardLink" href={item.href}>
-                  <img
+                  <Image
                     className="image"
                     src={item.imageSrc}
                     alt=""
                     loading="lazy"
+                    fill
                   />
                   <div className="overlay" />
                   <div className="cardContent">

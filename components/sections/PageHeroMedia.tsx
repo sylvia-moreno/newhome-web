@@ -1,4 +1,5 @@
 import styles from "./PageHeroMedia.module.css";
+import Image from "next/image";
 
 type PageHeroMediaProps = {
   title: string;
@@ -24,7 +25,11 @@ export function PageHeroMedia({ title, subtitle, media }: PageHeroMediaProps) {
             preload="metadata"
           />
         ) : (
-          <img className={styles.media} src={media.src} alt={media.alt ?? ""} />
+          <Image
+            className={styles.media}
+            src={media.src}
+            alt={media.alt ?? ""}
+          />
         )}
         <div className={styles.overlay} />
       </div>

@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import { MediaTextRow } from "@/components/sections/MediaTextRow";
+import Image from "next/image";
 
 export const revalidate = 60;
 
@@ -11,7 +12,7 @@ export default function Page() {
           NewHome Paris
         </p>
         <h1 className="mt-4 font-title text-4xl md:text-5xl leading-[1.05]">
-          <img
+          <Image
             className="bloom-logo w-[220px] h-auto"
             src="/images/logo-bloom.png"
             alt="Bloom"
